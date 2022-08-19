@@ -1,15 +1,11 @@
 
 /* CSS Selectors */
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    padding: 0 20px 0 20px;
+html {
+    font-size:1.112vw;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
+    /* Colors */
     /* --dark-blue: hsl(233, 47%, 7%); */
     --dark-blue: gray;
     --purple: hsl(277, 64%, 61%);
@@ -18,19 +14,45 @@ body {
     --white-75A: hsla(0, 0%, 100%, 0.75);
     --white-06A: hsla(0, 0%, 100%, 0.6);
 
+    /* PX->REM values */
+    --7_2px-rem: 0.45rem;
+    --10px-rem: 0.625rem;
+    --13_6-rem: 0.85rem;
+    --15px-rem: 0.9375rem;
+    --20px-rem: 1.25rem;
+    --24px-rem: 1.5rem;
+    --32px-rem: 2rem;
+    --36px-rem: 2.25rem;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 0 20px 0 20px;
+    /* Use media queries to regulate when font size auto resize and when it stays stable */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
     background-color: var(--dark-blue);
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
 }
 
 
 h1 {
     color: var(--white);
     font-family: 'Inter', sans-serif;
+    font-size: var(--36px-rem);
     font-weight: 700;
-    display: inline;
 }
 
 p {
-    font-size: 15px;
+    font-size: var(--15px-rem);
 }
 
 /* Classes(in order of appearance[LTR]) */
@@ -44,7 +66,11 @@ p {
 .left-section {
     width: 50%;
     display: inline-block;
-    /* padding: 1px; */
+	padding: 6.5% 9% 0 6.5%;
+}
+
+.main-heading {
+    margin-bottom: 6.5%;
 }
 
 .purple {
@@ -54,28 +80,72 @@ p {
 .main-paragraph {
     color: var(--white-75A);
     font-family: 'Inter', "sans-serif";
+    line-height: 1.7;
+}
+
+.bottom-section {
+    display: flex;
+    margin-top: 13.5%;
+    width: 90.5%;
 }
 
 .stat {
     display: inline-block;
-    width:32.75%;
+    margin: auto;
 }
 
 .stat-heading {
     color: var(--white);
     font-family: "Inter", "sans-serif";
+    font-size:var(--24px-rem);
     font-weight: 700;
+    margin-bottom: 0;
 }
 
 .stat-paragraph {
     color: var(--white-06A);
     text-transform: uppercase;
     font-family: "Lexend Deca", "sans-serif";
+    /* Using percentage in this case is not favorable
+    because each stat paragraph has a different space
+    available which is determined by the stat heading
+    Therefore, rem is used instead */
+    margin-top:.35rem;
+    font-size:var(--13_6-rem)
+}
+
+.hero-img {
+    background-color: var(--purple);
+    float: right;
+    display: block;
+    width: 48.5%;
 }
 
 .card-img {
-    width:50%;
     border-radius: 0 20px 20px 0; 
     display: block; /* inline is a nightmare */
-    float: right;
+    mix-blend-mode: multiply;
+    opacity: 75%;
+    width: 100%;
+}
+
+
+
+/* Custom properties */
+
+
+.ml-0 {
+    margin-left: 0;
+}
+
+.mr-0 {
+    margin-right: 0;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mb-0 {
+    margin-bottom: 0;
 }
