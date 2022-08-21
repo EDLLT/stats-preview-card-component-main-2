@@ -2,6 +2,7 @@
 /* CSS Selectors */
 
 html {
+    /* Gradual font resizing for screens[Base: 1440P (1.112% of 1440P)] */
     font-size:1.112vw;
 
 
@@ -71,6 +72,8 @@ p {
 
 .main-heading {
     margin-bottom: 6.5%;
+    /* Prevent text wrapping */
+    width: 24rem;
 }
 
 .purple {
@@ -148,4 +151,17 @@ p {
 
 .mb-0 {
     margin-bottom: 0;
+}
+
+
+/* Media Queries */
+/* 1115 + 20 + 20 (Due to padding on left and right */
+@media (min-width: 1155px) {
+    html {
+        /* (1.112*100)/1440 = fixed size */
+        font-size: 1rem;
+    }
+    h1 {
+        color:red;
+    }
 }
